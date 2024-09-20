@@ -1,9 +1,10 @@
 "use client";
 
+import { Loader } from "lucide-react";
+
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 
-import { UserButton } from "@/features/auth/components/user-button";
 import { useGetWorkspaces } from "@/features/workspaces/api/use-get-workspaces";
 import { useCreateWorkspaceModal } from "@/features/workspaces/store/use-create-workspace-modal";
 
@@ -27,8 +28,8 @@ const Home = () => {
   }, [isLoading, open, router, setOpen, workspaceId]);
 
   return (
-    <div>
-      <UserButton />
+    <div className="h-full flex justify-center items-center">
+      <Loader className="size-6 animate-spin text-muted-foreground" />
     </div>
   );
 };
